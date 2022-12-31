@@ -1,0 +1,65 @@
+*,
+*::after,
+*::before {
+    box-sizing: border-box;
+}
+
+:root {
+    --background-color: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
+}
+
+body {
+    background-image: var(--background-color);
+    font-family: 'Alegreya', serif;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
+
+.wraper-calculator {
+    min-height: 100vh;
+    display: grid;
+    justify-content: center;
+    align-content: center;
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: minmax(120px, auto) repeat(5, 100px);
+}
+
+.wraper-calculator .calc-result {
+    grid-column: 1 / -1;
+    background-color: rgb(0, 0, 0, 0.75);
+}
+
+.wraper-calculator .span-2 {
+    grid-column: span 2;
+}
+
+.wraper-calculator>button {
+    --opacity: 0.75;
+    font-size: 2rem;
+    outline: none;
+    border: 1px solid white;
+    background-color: rgb(255, 255, 255, var(--opacity));
+    cursor: pointer;
+}
+
+.wraper-calculator>button:hover {
+    --opacity: 0.9;
+}
+
+.wraper-calculator .calc-result {
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    justify-content: space-between;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.wraper-calculator .calc-result .pre-operation {
+    color: rgb(255, 255, 255, 0.75);
+    font-size: 1.5rem;
+}
+.wraper-calculator .calc-result .current-operation {
+    color: rgb(255, 255, 255, 0.9);
+    font-size: 2.5rem;
+}
